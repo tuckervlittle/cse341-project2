@@ -38,7 +38,8 @@ router.get('/:id',
 // POST /movies
 router.post('/',
   // #swagger.tags = ['Movies']
-  // #swagger.description = 'Create a new movie'
+  // #swagger.description = 'Create a new movie (protected)'
+  // #swagger.security = [{ "cookieAuth": [] }]'
   /* #swagger.parameters['newMovie'] = {
       in: 'body',
       description: 'New movie object',
@@ -49,13 +50,14 @@ router.post('/',
       description: 'Movie created',
       schema: { $ref: '#/definitions/Movie' }
   } */
-  // isAuthenticated,
+  isAuthenticated,
   movieController.createMovie);
 
 // PUT /movies/{id}
 router.put('/:id',
   // #swagger.tags = ['Movies']
-  // #swagger.description = 'Update movie by id'
+  // #swagger.description = 'Update movie by id (protected)'
+  // #swagger.security = [{ "cookieAuth": [] }]'
   // #swagger.parameters['id'] = { description: 'Movie ID', required: true }
   /* #swagger.parameters['movie'] = {
       in: 'body',
@@ -63,15 +65,16 @@ router.put('/:id',
       required: true,
       schema: { $ref: '#/definitions/UpdatedMovie' }
   } */
-  // isAuthenticated,
+  isAuthenticated,
   movieController.updateMovie);
 
 // DELETE /movies/{id}
 router.delete('/:id',
   // #swagger.tags = ['Movies']
-  // #swagger.description = 'Delete movie by id'
+  // #swagger.description = 'Delete movie by id (protected)'
+  // #swagger.security = [{ "cookieAuth": [] }]'
   // #swagger.parameters['id'] = { description: 'Movie ID', required: true }
-  // isAuthenticated,
+  isAuthenticated,
   movieController.deleteMovie);
 
 module.exports = router;

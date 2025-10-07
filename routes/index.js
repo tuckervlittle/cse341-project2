@@ -6,7 +6,7 @@ router.use('/', require('./swagger'));
 router.use('/movies', require('./movies'));
 router.use('/genres', require('./genres'));
 
-/*
+
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 
 router.get('/github/callback', passport.authenticate('github',
@@ -18,5 +18,5 @@ router.get('/logout', function(req, res, next) {
     res.redirect('/');
   });
 });
-*/
+
 module.exports = router;
